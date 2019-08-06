@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flip form</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="form" id="form">
+                <div class="front">
+                    <div class="title">
+                        <h1>Login</h1>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text">
+                        <span data-span="Username"></span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="Password">
+                        <span data-span="Password"></span>
+                    </div>
+                    <div class="inputbox">
+                        <button class="btn1">Login</button>
+                    </div>
+                    <div class="inputbox">
+                        <a href="#">Forgot password...?</a>
+                    </div>
+                    <div class="inputbox">
+                        <p>Dont have account...?</p>
+                    </div>
+                    <div class="inputbox">
+                        <button class="btn2" onclick="flip()" type="submit">SignUp</button>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="title">
+                        <h1>SignUp</h1>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text">
+                        <span data-span="Your name"></span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="email">
+                        <span data-span="E-mail"></span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="Password">
+                        <span data-span="Password"></span>
+                    </div>
+                    <div class="inputbox">
+                        <button class="btn1">SignUp</button>
+                    </div>
+                    <div class="inputbox">
+                        <p>Already have a account...?</p>
+                    </div>
+                    <div class="inputbox">
+                        <button class="btn2" onclick="flip1()" type="submit">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+        
+          $(".inputbox input").on("focus",function(){
+             $(this).addClass("focus");
+          });
+          
+          $(".inputbox input").on("blur",function(){
+             if($(this).val() == "")
+             $(this).removeClass("focus");
+          });
+          
+          function flip(){
+                         document.getElementById("form").style.transform = "rotateY(-180deg)";
+            }
+            
+            function flip1(){
+                         document.getElementById("form").style.transform = "rotateY(0deg)";
+            }
+          
+        </script>
+    </body>
+</html>
